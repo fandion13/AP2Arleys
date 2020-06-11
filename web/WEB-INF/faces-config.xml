@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+    KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+
+-->
+<faces-config version="2.3"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_3.xsd">
+    <navigation-rule>
+        <from-view-id>/index.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>vaiParaListagemPais</from-outcome>
+            <to-view-id>/PaisListagem.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>vaiParaListagemCidade</from-outcome>
+            <to-view-id>/CidadeListagem.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>vaiParaListagemEndereco</from-outcome>
+            <to-view-id>/EnderecoListagem.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/PaisListagem.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>voltaParaIndex</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>vaiParaIncluir</from-outcome>
+            <to-view-id>/PaisIncluir.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>vaiParaEditarPais</from-outcome>
+            <to-view-id>/PaisEditar.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>refresh</from-outcome>
+            <to-view-id>/PaisListagem.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <managed-bean>
+        <managed-bean-name>paisController</managed-bean-name>
+        <managed-bean-class>frb.edu.br.filipe.controladores.PaisController</managed-bean-class>
+    
+        <managed-bean-scope>session</managed-bean-scope></managed-bean>
+    <navigation-rule>
+        <from-view-id>/PaisIncluir.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>voltaParaListagemPais</from-outcome>
+            <to-view-id>/PaisListagem.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <managed-bean>
+        <managed-bean-name>cidadeController</managed-bean-name>
+        <managed-bean-class>frb.edu.br.filipe.controladores.CidadeController</managed-bean-class>
+    
+        <managed-bean-scope>session</managed-bean-scope></managed-bean>
+    <navigation-rule>
+        <from-view-id>/CidadeListagem.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>voltaParaIndex</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>vaiParaIncluir</from-outcome>
+            <to-view-id>/CidadeIncluir.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>vaiParaEditarCidade</from-outcome>
+            <to-view-id>/CidadeEditar.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>refresh</from-outcome>
+            <to-view-id>/CidadeListagem.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/CidadeIncluir.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>voltaParaListagemCidade</from-outcome>
+            <to-view-id>/CidadeListagem.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <managed-bean>
+        <managed-bean-name>enderecoController</managed-bean-name>
+        <managed-bean-class>frb.edu.br.filipe.controladores.EnderecoController</managed-bean-class>
+    
+        <managed-bean-scope>session</managed-bean-scope></managed-bean>
+    <navigation-rule>
+        <from-view-id>/EnderecoListagem.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>voltaParaIndex</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>vaiParaIncluir</from-outcome>
+            <to-view-id>/EnderecoIncluir.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>vaiParaEditarEndereco</from-outcome>
+            <to-view-id>/EnderecoEditar.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>refresh</from-outcome>
+            <to-view-id>/EnderecoListagem.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/EnderecoIncluir.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>voltaParaListagemEndereco</from-outcome>
+            <to-view-id>/EnderecoListagem.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/EnderecoEditar.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>voltaParaListagemEndereco</from-outcome>
+            <to-view-id>/EnderecoListagem.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/CidadeEditar.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>voltaParaListagemCidade</from-outcome>
+            <to-view-id>/CidadeListagem.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/PaisEditar.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>voltaParaListagemPais</from-outcome>
+            <to-view-id>/PaisListagem.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+</faces-config>
