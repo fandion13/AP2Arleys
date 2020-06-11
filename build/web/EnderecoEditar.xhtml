@@ -32,7 +32,7 @@
                         <td><h:outputLabel value="CIDADE"/></td>
                         <td>
                             <h:selectOneMenu id="selectCidade" value="#{enderecoController.endereco.cidade.cidade_id}" style="width: 100%">
-                                <f:selectItem itemLabel="Selecione um país" itemValue="-1"/>
+                                <f:selectItem itemLabel="Selecione uma cidade" itemValue="-1"/>
                                 <f:selectItems value="#{cidadeController.cidades}" var="cidade" itemLabel="#{cidade.cidade}" itemValue="#{cidade.cidade_id}"/>
                             </h:selectOneMenu>
                         </td>
